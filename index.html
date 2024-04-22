@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Aliou Cissse -portfolio</title>
 </head>
-<body>
+<body> 
     <!-- header-->
     <header class="py-4">
         <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
@@ -501,6 +501,17 @@
 
       <!-- contaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaact-->
 
+                   <!-- Message de confirmation -->
+<?php 
+if (isset($_GET['status'])) {
+  if ($_GET['status'] == 'success') {
+    echo '<div class="alert alert-success" role="alert">Message submitted successfully!</div>';
+  } elseif ($_GET['status'] == 'error') {
+    echo '<div class="alert alert-danger" role="alert">An error occurred. Please try again later.</div>';
+  }
+}
+?>
+
       <section id="contact" class="py-5 bg-light">
         <div class="container">
           <h2 class="mb-0">Un projet de création web ?</h2>
@@ -513,7 +524,7 @@
             <div class="col-12 offset-md-1 col-md-6">
   
               <!-- Formulaire -->
-              <form class="row">
+              <form action="submit-message.php" method="post" class="row">
                 <div class="col-6 my-2">
                   <label for="firstname" class="form-label">Prénom</label>
                   <input name="firstname" type="text" class="form-control" id="firstname">
@@ -523,7 +534,7 @@
                   <input name="name" type="text" class="form-control" id="name">
                 </div>
                 <div class="col-12 my-2">
-                  <label for="email" class="form-label">Email address</label>
+                  <label for="email" class="form-label">Adresse Mail</label>
                   <input name="email" type="email" class="form-control" id="email">
                 </div>
                 <div class="col-12 my-2">
@@ -534,6 +545,7 @@
                   <button type="submit" class="btn btn-primary w-100">Envoyer</button>
                 </div>
               </form>
+ 
   
             </div>
           </div>
@@ -584,26 +596,5 @@
     
         </footer>
     <!--fin  footer-->
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-  
-
 </body>
 </html>
